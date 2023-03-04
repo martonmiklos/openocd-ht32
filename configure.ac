@@ -282,7 +282,7 @@ AC_ARG_ENABLE([ioutil],
   [build_ioutil=$enableval], [build_ioutil=no])
 
 AS_CASE(["${host_cpu}"],
-  [arm*], [
+  [arm*|aarch64], [
     AC_ARG_ENABLE([ep93xx],
       AS_HELP_STRING([--enable-ep93xx], [Enable building support for EP93xx based SBCs]),
       [build_ep93xx=$enableval], [build_ep93xx=no])
@@ -298,7 +298,7 @@ AS_CASE(["${host_cpu}"],
   [
     build_ep93xx=no
     build_at91rm9200=no
-    build_bcm2835gpio=no
+    build_bcm2835gpio=yes
 ])
 
 AC_ARG_ENABLE([gw16012],
